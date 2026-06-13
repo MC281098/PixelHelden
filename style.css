@@ -96,6 +96,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -106,6 +108,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 body.lang-ar {
@@ -3185,6 +3188,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 0.93rem;
   font-style: normal;
   margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .legal-card ul {

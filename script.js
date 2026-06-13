@@ -170,7 +170,7 @@ const translations = {
     footer_email:    "ahmad99dahab@gmail.com",
     footer_phone:    "+49 176 40548859",
     footer_whatsapp: "WhatsApp schreiben",
-    footer_copy:     "© 2025 PIXELHELDEN. Alle Rechte vorbehalten.",
+    footer_copy:     "© 2026 PIXELHELDEN. Alle Rechte vorbehalten.",
 
     /* FAQ */
     faq_title: "Häufige Fragen",
@@ -390,7 +390,7 @@ const translations = {
     footer_email:    "ahmad99dahab@gmail.com",
     footer_phone:    "+49 176 40548859",
     footer_whatsapp: "Write on WhatsApp",
-    footer_copy:     "© 2025 PIXELHELDEN. All rights reserved.",
+    footer_copy:     "© 2026 PIXELHELDEN. All rights reserved.",
 
     /* FAQ */
     faq_title: "FAQ",
@@ -610,7 +610,7 @@ const translations = {
     footer_email:    "ahmad99dahab@gmail.com",
     footer_phone:    "+49 176 40548859",
     footer_whatsapp: "راسلنا على واتساب",
-    footer_copy:     "© 2025 PIXELHELDEN. جميع الحقوق محفوظة.",
+    footer_copy:     "© 2026 PIXELHELDEN. جميع الحقوق محفوظة.",
 
     /* FAQ */
     faq_title: "الأسئلة الشائعة",
