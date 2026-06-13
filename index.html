@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PIXELHELDEN — Professionelle Websites für Unternehmen, Shops und lokale Businesses zu unschlagbaren Preisen." />
+  <meta name="keywords" content="Webdesign, Website erstellen, Webseite, günstig, professionell, PIXELHELDEN, Deutschland" />
+  <meta name="author" content="Moufak Chamou &amp; Ahmad Gold" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="PIXELHELDEN – Websites die verkaufen" />
+  <meta property="og:description" content="PIXELHELDEN — Professionelle Websites für Unternehmen, Shops und lokale Businesses zu unschlagbaren Preisen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 112'><rect width='90' height='112' fill='%230A0A0A' rx='10'/><g fill='none' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'><polyline points='10,106 10,26 45,68 80,26 80,106' stroke='%23D4AF37'/><polyline points='10,106 45,6 80,106' stroke='%23D4AF37'/><line x1='23' y1='68' x2='67' y2='68' stroke='%23D4AF37'/></g></svg>" />
+  <title>PIXELHELDEN — Websites die verkaufen</title>
+
+  <!-- Google Fonts: Archivo (headings) · Inter (body) · Tajawal (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Inter:wght@400;500;600&family=Tajawal:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="overflow: hidden;">
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Page loader overlay -->
+  <div class="page-loader" id="loader" aria-hidden="true">
+    <div class="page-loader__inner">
+      <div class="page-loader__logo">
+        <svg width="52" height="52" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <polygon points="16,2 29,9.5 29,22.5 16,30 3,22.5 3,9.5" fill="#D4AF37"/>
+          <rect x="11" y="11" width="4" height="4" fill="#0A0A0A" opacity="0.60"/>
+          <rect x="17" y="11" width="4" height="4" fill="#0A0A0A" opacity="0.85"/>
+          <rect x="11" y="17" width="4" height="4" fill="#0A0A0A" opacity="0.85"/>
+          <rect x="17" y="17" width="4" height="4" fill="#0A0A0A" opacity="0.60"/>
+        </svg>
+        <span class="loader-pixel">PIXEL</span><span class="loader-helden">HELDEN</span>
+      </div>
+      <div class="page-loader__bar" aria-hidden="true"><div class="page-loader__fill"></div></div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       HEADER — sticky dark glass + gold logo
+       ============================================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <a href="#" class="logo" aria-label="PIXELHELDEN – zur Startseite">
+        <!-- Gold hexagon SVG mark -->
+        <span class="logo__mark" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <polygon points="16,2 29,9.5 29,22.5 16,30 3,22.5 3,9.5" fill="#D4AF37"/>
+            <rect x="11" y="11" width="4" height="4" fill="#0A0A0A" opacity="0.60"/>
+            <rect x="17" y="11" width="4" height="4" fill="#0A0A0A" opacity="0.85"/>
+            <rect x="11" y="17" width="4" height="4" fill="#0A0A0A" opacity="0.85"/>
+            <rect x="17" y="17" width="4" height="4" fill="#0A0A0A" opacity="0.60"/>
+          </svg>
+        </span>
+        <!-- AM Monogram — header -->
+        <svg class="logo__mono" viewBox="0 0 90 112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="mgh-gold" gradientUnits="userSpaceOnUse" x1="10" y1="6" x2="80" y2="106">
+              <stop offset="0%"   stop-color="#B8860B"/>
+              <stop offset="28%"  stop-color="#D4AF37"/>
+              <stop offset="52%"  stop-color="#FFE57A"/>
+              <stop offset="76%"  stop-color="#D4AF37"/>
+              <stop offset="100%" stop-color="#B8860B"/>
+            </linearGradient>
+            <linearGradient id="mgh-shine" gradientUnits="userSpaceOnUse" x1="-80" y1="55" x2="-20" y2="55">
+              <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+              <stop offset="50%"  stop-color="white" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              <animate attributeName="x1" values="-80;110;110" keyTimes="0;0.35;1" dur="4s" repeatCount="indefinite"/>
+              <animate attributeName="x2" values="-20;170;170" keyTimes="0;0.35;1" dur="4s" repeatCount="indefinite"/>
+            </linearGradient>
+            <filter id="mgh-glow" x="-30%" y="-20%" width="160%" height="140%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
+              <feFlood flood-color="#D4AF37" flood-opacity="0.55" result="color"/>
+              <feComposite in="color" in2="blur" operator="in" result="glow"/>
+              <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#mgh-glow)" fill="none" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="10,106 10,26 45,68 80,26 80,106" stroke="url(#mgh-gold)"/>
+            <polyline points="10,106 45,6 80,106"              stroke="url(#mgh-gold)"/>
+            <line x1="23" y1="68" x2="67" y2="68"             stroke="url(#mgh-gold)"/>
+            <polyline points="10,106 10,26 45,68 80,26 80,106" stroke="url(#mgh-shine)"/>
+            <polyline points="10,106 45,6 80,106"              stroke="url(#mgh-shine)"/>
+            <line x1="23" y1="68" x2="67" y2="68"             stroke="url(#mgh-shine)"/>
+          </g>
+        </svg>
+        <span class="logo__pixel">PIXEL</span><span class="logo__helden">HELDEN</span>
+      </a>
+
+      <nav class="lang-switcher" aria-label="Language switcher">
+        <button class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
+        <span class="lang-divider" aria-hidden="true">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-divider" aria-hidden="true">|</span>
+        <button class="lang-btn" data-lang="ar" aria-pressed="false">عربي</button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =============================================
+       HERO — dark luxury with gold accents
+       ============================================= -->
+  <section class="hero" id="hero" aria-labelledby="hero-heading">
+    <div class="container hero__inner">
+
+      <div class="hero__content">
+        <h1 class="hero__headline" id="hero-heading" data-i18n="hero_headline">
+          Websites, die <em>verkaufen</em> —<br>nicht nur schön aussehen.
+        </h1>
+        <p class="hero__sub" data-i18n="hero_sub">
+          Professionelle Webauftritte für Unternehmen, Shops und lokale Businesses — zu Preisen, die kein Mitbewerber schlägt.
+        </p>
+        <div class="hero__ctas">
+          <a href="#contact" class="btn btn--primary cta-link" data-i18n="cta_quote">Kostenloses Angebot</a>
+          <a href="#services" class="btn btn--secondary" data-i18n="cta_services">Unsere Leistungen</a>
+        </div>
+      </div>
+
+      <!-- Animated VS Code-style editor -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="code-editor" dir="ltr">
+
+          <!-- Title bar -->
+          <div class="code-editor__bar">
+            <div class="code-editor__dots">
+              <span class="code-editor__dot code-editor__dot--red"></span>
+              <span class="code-editor__dot code-editor__dot--yellow"></span>
+              <span class="code-editor__dot code-editor__dot--green"></span>
+            </div>
+            <div class="code-editor__tabs">
+              <span class="code-editor__tab code-editor__tab--active">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                index.html
+              </span>
+              <span class="code-editor__tab">style.css</span>
+            </div>
+          </div>
+
+          <!-- Editor body -->
+          <div class="code-editor__body">
+            <div class="code-editor__gutter" id="codeGutter" aria-hidden="true">
+              <span>1</span>
+            </div>
+            <div class="code-editor__code">
+              <pre class="code-editor__pre" id="codeOutput"></pre>
+            </div>
+          </div>
+
+          <!-- Status bar -->
+          <div class="code-editor__statusbar">
+            <span class="code-editor__status-lang">&#60;/&#62; HTML</span>
+            <span class="code-editor__status-info" id="codeStatus">Ln 1, Col 1</span>
+          </div>
+
+        </div>
+
+        <!-- Floating trust badges -->
+        <div class="hero__badge hero__badge--speed">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span data-i18n="badge_speed">Blitzschnell</span>
+        </div>
+        <div class="hero__badge hero__badge--mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span data-i18n="badge_mobile">100% Mobil</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SERVICES — 3 glass cards with 3D tilt
+       ============================================= -->
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <h2 class="section-title" id="services-heading" data-i18n="services_title">Was wir bauen</h2>
+      <p class="section-sub" data-i18n="services_sub">Maßgeschneiderte Lösungen für jede Art von Business.</p>
+
+      <div class="services__grid">
+
+        <article class="service-card tilt-card fade-in">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s1_title">Unternehmenswebsites</h3>
+          <p class="service-card__text" data-i18n="s1_text">Moderne, schnelle Websites für Unternehmen jeder Größe. Cleanes Design, das Vertrauen weckt und Kunden gewinnt — vom ersten Klick an.</p>
+        </article>
+
+        <article class="service-card tilt-card fade-in">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s2_title">Shops &amp; lokale Businesses</h3>
+          <p class="service-card__text" data-i18n="s2_text">Öffnungszeiten, Produkte, Standort, Kontakt — alles, was Ihre Kunden brauchen. Starke Präsenz. Sofort spürbar.</p>
+        </article>
+
+        <article class="service-card tilt-card fade-in">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="s3_title">Mobil &amp; mehrsprachig</h3>
+          <p class="service-card__text" data-i18n="s3_text">Jede Website läuft perfekt auf Smartphones und unterstützt mehrere Sprachen — für Kunden überall auf der Welt.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       STATS — animated counters
+       ============================================= -->
+  <section class="stats" id="stats" aria-labelledby="stats-heading">
+    <div class="container">
+      <h2 class="section-title" id="stats-heading" data-i18n="stats_title">Unsere Zahlen</h2>
+      <p class="section-sub" data-i18n="stats_sub">Ergebnisse, die für sich sprechen.</p>
+      <div class="stats__grid">
+
+        <div class="stat-card fade-in">
+          <div class="stat-card__number" data-target="50" data-suffix="+">0+</div>
+          <div class="stat-card__label" data-i18n="stat1_label">Websites geliefert</div>
+        </div>
+
+        <div class="stat-card fade-in">
+          <div class="stat-card__number" data-target="100" data-suffix="%">0%</div>
+          <div class="stat-card__label" data-i18n="stat2_label">Kundenzufriedenheit</div>
+        </div>
+
+        <div class="stat-card fade-in">
+          <div class="stat-card__number" data-target="3" data-suffix="+">0+</div>
+          <div class="stat-card__label" data-i18n="stat3_label">Jahre Erfahrung</div>
+        </div>
+
+        <div class="stat-card fade-in">
+          <div class="stat-card__number" data-target="5" data-suffix="">0</div>
+          <div class="stat-card__label" data-i18n="stat4_label">Sprachen unterstützt</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       PROCESS — 3 steps: how we work
+       ============================================= -->
+  <section class="process" id="process" aria-labelledby="process-heading">
+    <div class="container">
+      <h2 class="section-title" id="process-heading" data-i18n="process_title">So arbeiten wir</h2>
+      <p class="section-sub" data-i18n="process_sub">Einfach. Transparent. Ergebnisorientiert.</p>
+
+      <div class="process__steps">
+
+        <div class="step fade-in">
+          <div class="step__number" aria-hidden="true">01</div>
+          <div class="step__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3 class="step__title" data-i18n="step1_title">Gespräch &amp; Idee</h3>
+          <p class="step__text" data-i18n="step1_text">Wir hören zu, verstehen Ihr Business und entwickeln gemeinsam die Strategie für Ihren neuen Webauftritt.</p>
+        </div>
+
+        <div class="step__connector" aria-hidden="true"></div>
+
+        <div class="step fade-in">
+          <div class="step__number" aria-hidden="true">02</div>
+          <div class="step__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="step__title" data-i18n="step2_title">Design &amp; Entwicklung</h3>
+          <p class="step__text" data-i18n="step2_text">Wir gestalten und programmieren Ihre Website — schnell, sauber und mit Liebe zum Detail.</p>
+        </div>
+
+        <div class="step__connector" aria-hidden="true"></div>
+
+        <div class="step fade-in">
+          <div class="step__number" aria-hidden="true">03</div>
+          <div class="step__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 2 11 13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </div>
+          <h3 class="step__title" data-i18n="step3_title">Launch &amp; Support</h3>
+          <p class="step__text" data-i18n="step3_text">Ihr Auftritt geht live — und wir bleiben an Ihrer Seite, damit alles reibungslos läuft.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       COMPARISON TABLE — us vs. big agencies
+       ============================================= -->
+  <section class="compare" id="compare" aria-labelledby="compare-heading">
+    <div class="container">
+      <h2 class="section-title" id="compare-heading" data-i18n="compare_title">PIXELHELDEN vs. Große Agenturen</h2>
+      <p class="section-sub" data-i18n="compare_sub">Der direkte Vergleich.</p>
+
+      <div class="compare__table fade-in">
+        <div class="compare__header">
+          <div class="compare__cell compare__cell--feature"></div>
+          <div class="compare__cell compare__cell--us">PIXELHELDEN</div>
+          <div class="compare__cell compare__cell--them" data-i18n="compare_col_them">Große Agenturen</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__cell compare__cell--feature" data-i18n="compare_r1">Direkte Kommunikation</div>
+          <div class="compare__cell compare__cell--us compare__cell--check">✅</div>
+          <div class="compare__cell compare__cell--them compare__cell--cross">❌</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__cell compare__cell--feature" data-i18n="compare_r2">Schnelle Lieferung</div>
+          <div class="compare__cell compare__cell--us compare__cell--check">✅</div>
+          <div class="compare__cell compare__cell--them compare__cell--warn">⚠️</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__cell compare__cell--feature" data-i18n="compare_r3">Faire Preise</div>
+          <div class="compare__cell compare__cell--us compare__cell--check">✅</div>
+          <div class="compare__cell compare__cell--them compare__cell--cross">❌</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__cell compare__cell--feature" data-i18n="compare_r4">Mehrsprachiger Support</div>
+          <div class="compare__cell compare__cell--us compare__cell--check">✅</div>
+          <div class="compare__cell compare__cell--them compare__cell--warn">⚠️</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__cell compare__cell--feature" data-i18n="compare_r5">Persönlicher Support nach Launch</div>
+          <div class="compare__cell compare__cell--us compare__cell--check">✅</div>
+          <div class="compare__cell compare__cell--them compare__cell--cross">❌</div>
+        </div>
+        <div class="compare__row">
+          <div class="compare__cell compare__cell--feature" data-i18n="compare_r6">Individuelles Design</div>
+          <div class="compare__cell compare__cell--us compare__cell--check">✅</div>
+          <div class="compare__cell compare__cell--them compare__cell--warn">⚠️</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       REVIEWS — client testimonials
+       ============================================= -->
+  <section class="reviews" id="reviews" aria-labelledby="reviews-heading">
+    <div class="container">
+      <h2 class="section-title" id="reviews-heading" data-i18n="reviews_title">Das sagen unsere Kunden</h2>
+      <p class="section-sub" data-i18n="reviews_sub">Echte Ergebnisse. Echte Zufriedenheit.</p>
+
+      <div class="reviews__grid">
+
+        <div class="review-card tilt-card fade-in">
+          <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+          <p class="review-card__text" data-i18n="r1_text">"Blitzschnelle Lieferung und ein Design, das Kunden begeistert. Absolute Empfehlung!"</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar" aria-hidden="true">KR</div>
+            <div>
+              <p class="review-card__name" data-i18n="r1_name">Klaus Richter</p>
+              <p class="review-card__role" data-i18n="r1_role">Unternehmer, München</p>
+            </div>
+          </div>
+          <div class="review-card__shine" aria-hidden="true"></div>
+        </div>
+
+        <div class="review-card tilt-card fade-in">
+          <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+          <p class="review-card__text" data-i18n="r2_text">"The price was unbeatable and quality exceeded all expectations. Our sales doubled after launch."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar" aria-hidden="true">JM</div>
+            <div>
+              <p class="review-card__name" data-i18n="r2_name">James Mitchell</p>
+              <p class="review-card__role" data-i18n="r2_role">E-Commerce, London</p>
+            </div>
+          </div>
+          <div class="review-card__shine" aria-hidden="true"></div>
+        </div>
+
+        <div class="review-card tilt-card fade-in">
+          <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+          <p class="review-card__text" data-i18n="r3_text">"موقع احترافي في وقت قياسي وبسعر لا يُصدق. الفريق محترف جداً ومتجاوب."</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar" aria-hidden="true">أر</div>
+            <div>
+              <p class="review-card__name" data-i18n="r3_name">أحمد الرشيد</p>
+              <p class="review-card__role" data-i18n="r3_role">صاحب مطعم، دبي</p>
+            </div>
+          </div>
+          <div class="review-card__shine" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       FOUNDERS — meet the team
+       ============================================= -->
+  <section class="founders" id="founders" aria-labelledby="founders-heading">
+    <div class="container">
+      <h2 class="section-title" id="founders-heading" data-i18n="founders_title">Das Team hinter PIXELHELDEN</h2>
+      <p class="section-sub" data-i18n="founders_sub">Zwei Entwickler. Eine Leidenschaft. Unzählige erfolgreiche Websites.</p>
+
+      <div class="founders__grid">
+
+        <div class="founder-card tilt-card fade-in">
+          <div class="founder-card__avatar" aria-hidden="true">
+            <div class="founder-card__hex">MC</div>
+          </div>
+          <div class="founder-card__body">
+            <h3 class="founder-card__name" data-i18n="founder1_name">Moufak Chamou</h3>
+            <p class="founder-card__role" data-i18n="founder1_role">Co-Founder &amp; Web Developer</p>
+            <p class="founder-card__desc" data-i18n="founder1_desc">Fullstack-Entwickler mit einem Auge für Details und einer Leidenschaft für sauberen, performanten Code.</p>
+            <div class="founder-card__tags" aria-hidden="true">
+              <span class="tag">Full-Stack</span>
+              <span class="tag">Clean Code</span>
+              <span class="tag">Performance</span>
+            </div>
+          </div>
+          <div class="founder-card__shine" aria-hidden="true"></div>
+        </div>
+
+        <div class="founder-card tilt-card fade-in">
+          <div class="founder-card__avatar" aria-hidden="true">
+            <div class="founder-card__hex founder-card__hex--alt">AG</div>
+          </div>
+          <div class="founder-card__body">
+            <h3 class="founder-card__name" data-i18n="founder2_name">Ahmad Gold</h3>
+            <p class="founder-card__role" data-i18n="founder2_role">Co-Founder &amp; Creative Lead</p>
+            <p class="founder-card__desc" data-i18n="founder2_desc">Kreativkopf und Designstratege, der jede Website in ein überzeugendes digitales Erlebnis verwandelt.</p>
+            <div class="founder-card__tags" aria-hidden="true">
+              <span class="tag">UI / UX</span>
+              <span class="tag">Strategie</span>
+              <span class="tag">Branding</span>
+            </div>
+          </div>
+          <div class="founder-card__shine" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       OFFERS — 4 pricing package cards
+       ============================================= -->
+  <section class="offers" id="offers" aria-labelledby="offers-heading">
+    <div class="container">
+      <h2 class="section-title" id="offers-heading" data-i18n="offers_title">Unsere Pakete</h2>
+      <p class="section-sub" data-i18n="offers_sub">Wählen Sie das Paket, das zu Ihrem Business passt.</p>
+
+      <div class="offers__grid">
+
+        <!-- STARTER -->
+        <div class="offer-card tilt-card fade-in">
+          <div class="offer-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <p class="offer-card__subtitle" data-i18n="offer1_subtitle">Für Einsteiger</p>
+          <h3 class="offer-card__name">STARTER</h3>
+          <p class="offer-card__tagline" data-i18n="offer1_tagline">Ihr erster professioneller Webauftritt</p>
+          <div class="offer-card__divider" aria-hidden="true"></div>
+          <ul class="offer-card__features" aria-label="Enthaltene Leistungen">
+            <li class="offer-card__feature" data-i18n="offer1_f1">✓ 1-seitige Website (Landingpage)</li>
+            <li class="offer-card__feature" data-i18n="offer1_f2">✓ Responsives Design</li>
+            <li class="offer-card__feature" data-i18n="offer1_f3">✓ Kontaktformular</li>
+            <li class="offer-card__feature" data-i18n="offer1_f4">✓ Google Maps Integration</li>
+            <li class="offer-card__feature" data-i18n="offer1_f5">✓ 2 Wochen Support</li>
+          </ul>
+          <div class="offer-card__footer">
+            <p class="offer-card__price" data-i18n="offer1_price">Ab 299 €</p>
+            <a href="#contact" class="btn btn--secondary cta-link offer-card__cta" data-i18n="offer_cta">Angebot anfragen</a>
+          </div>
+          <div class="offer-card__shine" aria-hidden="true"></div>
+        </div>
+
+        <!-- BUSINESS (most popular) -->
+        <div class="offer-card offer-card--popular tilt-card fade-in">
+          <div class="offer-card__popular-badge" data-i18n="offer_popular">Beliebteste Wahl</div>
+          <div class="offer-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/>
+              <line x1="10" y1="14" x2="14" y2="14"/>
+            </svg>
+          </div>
+          <p class="offer-card__subtitle" data-i18n="offer2_subtitle">Für wachsende Unternehmen</p>
+          <h3 class="offer-card__name">BUSINESS</h3>
+          <p class="offer-card__tagline" data-i18n="offer2_tagline">Mehr Seiten. Mehr Wirkung.</p>
+          <div class="offer-card__divider" aria-hidden="true"></div>
+          <ul class="offer-card__features" aria-label="Enthaltene Leistungen">
+            <li class="offer-card__feature" data-i18n="offer2_f1">✓ Bis zu 5 Seiten</li>
+            <li class="offer-card__feature" data-i18n="offer2_f2">✓ Individuelles Design</li>
+            <li class="offer-card__feature" data-i18n="offer2_f3">✓ SEO-Grundoptimierung</li>
+            <li class="offer-card__feature" data-i18n="offer2_f4">✓ Blog / News-Bereich</li>
+            <li class="offer-card__feature" data-i18n="offer2_f5">✓ Animationen &amp; Interaktionen</li>
+            <li class="offer-card__feature" data-i18n="offer2_f6">✓ 4 Wochen Support</li>
+          </ul>
+          <div class="offer-card__footer">
+            <p class="offer-card__price" data-i18n="offer2_price">Ab 499 €</p>
+            <a href="#contact" class="btn btn--primary cta-link offer-card__cta" data-i18n="offer_cta">Angebot anfragen</a>
+          </div>
+          <div class="offer-card__shine" aria-hidden="true"></div>
+        </div>
+
+        <!-- SHOP -->
+        <div class="offer-card tilt-card fade-in">
+          <div class="offer-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <p class="offer-card__subtitle" data-i18n="offer3_subtitle">Für Online-Händler</p>
+          <h3 class="offer-card__name">SHOP</h3>
+          <p class="offer-card__tagline" data-i18n="offer3_tagline">Verkaufen rund um die Uhr</p>
+          <div class="offer-card__divider" aria-hidden="true"></div>
+          <ul class="offer-card__features" aria-label="Enthaltene Leistungen">
+            <li class="offer-card__feature" data-i18n="offer3_f1">✓ WooCommerce / Shopify</li>
+            <li class="offer-card__feature" data-i18n="offer3_f2">✓ Produktkatalog</li>
+            <li class="offer-card__feature" data-i18n="offer3_f3">✓ Zahlungsintegration</li>
+            <li class="offer-card__feature" data-i18n="offer3_f4">✓ Bestellverwaltung</li>
+            <li class="offer-card__feature" data-i18n="offer3_f5">✓ 8 Wochen Support</li>
+          </ul>
+          <div class="offer-card__footer">
+            <p class="offer-card__price" data-i18n="offer3_price">Ab 799 €</p>
+            <a href="#contact" class="btn btn--secondary cta-link offer-card__cta" data-i18n="offer_cta">Angebot anfragen</a>
+          </div>
+          <div class="offer-card__shine" aria-hidden="true"></div>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="offer-card tilt-card fade-in">
+          <div class="offer-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <p class="offer-card__subtitle" data-i18n="offer4_subtitle">Für anspruchsvolle Marken</p>
+          <h3 class="offer-card__name">PREMIUM</h3>
+          <p class="offer-card__tagline" data-i18n="offer4_tagline">Kein Kompromiss — nur Exzellenz</p>
+          <div class="offer-card__divider" aria-hidden="true"></div>
+          <ul class="offer-card__features" aria-label="Enthaltene Leistungen">
+            <li class="offer-card__feature" data-i18n="offer4_f1">✓ Unbegrenzte Seiten</li>
+            <li class="offer-card__feature" data-i18n="offer4_f2">✓ Luxury-Design &amp; Branding</li>
+            <li class="offer-card__feature" data-i18n="offer4_f3">✓ Vollständige SEO-Strategie</li>
+            <li class="offer-card__feature" data-i18n="offer4_f4">✓ Mehrsprachigkeit</li>
+            <li class="offer-card__feature" data-i18n="offer4_f5">✓ CMS &amp; Dashboard</li>
+            <li class="offer-card__feature" data-i18n="offer4_f6">✓ 3 Monate Support</li>
+          </ul>
+          <div class="offer-card__footer">
+            <p class="offer-card__price" data-i18n="offer4_price">Ab 999 €</p>
+            <a href="#contact" class="btn btn--secondary cta-link offer-card__cta" data-i18n="offer_cta">Angebot anfragen</a>
+          </div>
+          <div class="offer-card__shine" aria-hidden="true"></div>
+        </div>
+
+        <!-- QR MENU -->
+        <div class="offer-card tilt-card fade-in">
+          <div class="offer-card__icon offer-card__icon--qr" aria-hidden="true">
+            <svg class="qr-icon" width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Top-left finder -->
+              <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="6" y="6" width="6" height="6" rx="1" fill="currentColor"/>
+              <!-- Top-right finder -->
+              <rect x="32" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="36" y="6" width="6" height="6" rx="1" fill="currentColor"/>
+              <!-- Bottom-left finder -->
+              <rect x="2" y="32" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="6" y="36" width="6" height="6" rx="1" fill="currentColor"/>
+              <!-- Data dots -->
+              <rect x="20" y="2"  width="3" height="3" rx="0.5" fill="currentColor" opacity="0.8"/>
+              <rect x="25" y="2"  width="3" height="3" rx="0.5" fill="currentColor" opacity="0.5"/>
+              <rect x="20" y="7"  width="3" height="3" rx="0.5" fill="currentColor" opacity="0.9"/>
+              <rect x="25" y="12" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.6"/>
+              <rect x="2"  y="20" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.8"/>
+              <rect x="7"  y="20" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.5"/>
+              <rect x="12" y="20" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.9"/>
+              <rect x="2"  y="25" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.4"/>
+              <rect x="20" y="20" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.9"/>
+              <rect x="27" y="20" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.5"/>
+              <rect x="34" y="20" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.7"/>
+              <rect x="43" y="20" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.4"/>
+              <rect x="20" y="27" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.6"/>
+              <rect x="34" y="27" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.9"/>
+              <rect x="43" y="27" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.7"/>
+              <rect x="20" y="34" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.8"/>
+              <rect x="27" y="34" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.5"/>
+              <rect x="43" y="34" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.6"/>
+              <rect x="20" y="43" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.9"/>
+              <rect x="27" y="43" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.4"/>
+              <rect x="34" y="43" width="3" height="3" rx="0.5" fill="currentColor" opacity="0.8"/>
+              <!-- Animated scan line -->
+              <rect class="qr-scan-line" x="2" y="23" width="44" height="2" rx="1" fill="#D4AF37"/>
+            </svg>
+          </div>
+          <p class="offer-card__subtitle" data-i18n="offer5_subtitle">Für Restaurants &amp; Cafés</p>
+          <h3 class="offer-card__name">QR MENU</h3>
+          <p class="offer-card__tagline" data-i18n="offer5_tagline">Ihr Menü — ein Scan entfernt</p>
+          <div class="offer-card__divider" aria-hidden="true"></div>
+          <ul class="offer-card__features" aria-label="Enthaltene Leistungen">
+            <li class="offer-card__feature" data-i18n="offer5_f1">✓ Digitales Menü als Webseite</li>
+            <li class="offer-card__feature" data-i18n="offer5_f2">✓ Individueller QR-Code</li>
+            <li class="offer-card__feature" data-i18n="offer5_f3">✓ Jederzeit aktualisierbar</li>
+            <li class="offer-card__feature" data-i18n="offer5_f4">✓ Kein App-Download nötig</li>
+            <li class="offer-card__feature" data-i18n="offer5_f5">✓ Perfekt für Tische &amp; Flyer</li>
+          </ul>
+          <div class="offer-card__footer">
+            <p class="offer-card__price offer-card__price--label" data-i18n="offer5_price">Das clevere Upgrade</p>
+            <a href="#contact" class="btn btn--secondary cta-link offer-card__cta" data-i18n="offer_cta">Angebot anfragen</a>
+          </div>
+          <div class="offer-card__shine" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       PRICE CALCULATOR
+       ============================================= -->
+  <section class="calculator" id="calculator" aria-labelledby="calc-heading">
+    <div class="container">
+      <h2 class="section-title" id="calc-heading" data-i18n="calc_title">Preisrechner</h2>
+      <p class="section-sub" data-i18n="calc_sub">Sofort-Schätzung für Ihr Projekt.</p>
+
+      <div class="calc__panel fade-in">
+        <div class="calc__options">
+
+          <div class="calc__group">
+            <p class="calc__label" data-i18n="calc_type">Website-Typ</p>
+            <div class="calc__btns" id="calcType">
+              <button class="calc__btn active" data-value="company" data-i18n="calc_type_company">Unternehmen</button>
+              <button class="calc__btn" data-value="shop" data-i18n="calc_type_shop">Online-Shop</button>
+              <button class="calc__btn" data-value="restaurant" data-i18n="calc_type_restaurant">Restaurant-Menü</button>
+            </div>
+          </div>
+
+          <div class="calc__group">
+            <p class="calc__label" data-i18n="calc_pages">Seitenanzahl</p>
+            <div class="calc__btns" id="calcPages">
+              <button class="calc__btn active" data-value="small" data-i18n="calc_pages_1to5">1–5 Seiten</button>
+              <button class="calc__btn" data-value="medium" data-i18n="calc_pages_6to10">6–10 Seiten</button>
+              <button class="calc__btn" data-value="large" data-i18n="calc_pages_10plus">10+ Seiten</button>
+            </div>
+          </div>
+
+          <div class="calc__group">
+            <p class="calc__label" data-i18n="calc_langs">Sprachen</p>
+            <div class="calc__btns" id="calcLangs">
+              <button class="calc__btn active" data-value="1" data-i18n="calc_langs_1">1 Sprache</button>
+              <button class="calc__btn" data-value="2" data-i18n="calc_langs_2">2 Sprachen</button>
+              <button class="calc__btn" data-value="3" data-i18n="calc_langs_3plus">3+ Sprachen</button>
+            </div>
+          </div>
+
+          <div class="calc__group">
+            <p class="calc__label" data-i18n="calc_shop">Online-Shop?</p>
+            <div class="calc__btns" id="calcShop">
+              <button class="calc__btn" data-value="yes" data-i18n="calc_shop_yes">Ja</button>
+              <button class="calc__btn active" data-value="no" data-i18n="calc_shop_no">Nein</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="calc__result">
+          <p class="calc__result-label" data-i18n="calc_result_label">Geschätzte Investition</p>
+          <p class="calc__result-range" id="calcResult">400 € – 700 €</p>
+          <p class="calc__result-note" data-i18n="calc_result_note">* Richtwert – genaues Angebot kostenlos.</p>
+          <a href="#" class="btn btn--primary cta-link calc__result-cta" data-i18n="calc_cta">Exaktes Angebot anfragen</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       PRICING BANNER — gold glow CTA strip
+       ============================================= -->
+  <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="pricing__inner fade-in">
+        <div class="pricing__badge" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span data-i18n="price_badge">Garantiert</span>
+        </div>
+        <h2 class="pricing__headline" id="pricing-heading" data-i18n="price_headline">
+          Preise, die keiner schlägt.
+        </h2>
+        <p class="pricing__text" data-i18n="price_text">
+          Professionelle Qualität muss nicht teuer sein. Fordern Sie ein kostenloses Angebot an und vergleichen Sie selbst — wir sind sicher, dass wir Ihre Erwartungen übertreffen.
+        </p>
+        <a href="#contact" class="btn btn--accent cta-link" data-i18n="price_cta">Jetzt Angebot anfordern</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       FAQ — Häufige Fragen / FAQ / الأسئلة الشائعة
+       ============================================= -->
+  <section class="faq" id="faq" aria-labelledby="faqTitle">
+    <div class="container">
+
+      <h2 class="section-title fade-in" id="faqTitle" data-i18n="faq_title">Häufige Fragen</h2>
+      <p class="section-sub fade-in" data-i18n="faq_sub">Alles, was Sie über unsere Arbeit wissen müssen.</p>
+
+      <div class="faq__list fade-in">
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span data-i18n="faq_q1">Wie lange dauert die Erstellung einer Website?</span>
+            <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer"><p data-i18n="faq_a1">Je nach Projekt zwischen 3 und 14 Tagen.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span data-i18n="faq_q2">Was ist im Preis enthalten?</span>
+            <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer"><p data-i18n="faq_a2">Design, Entwicklung, mobile Optimierung und Basis-SEO. Alles startklar.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span data-i18n="faq_q3">Kann ich die Website später selbst bearbeiten?</span>
+            <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer"><p data-i18n="faq_a3">Ja — wir können ein einfaches CMS einrichten, damit Sie jederzeit eigene Inhalte bearbeiten können.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span data-i18n="faq_q4">Bieten Sie Support nach dem Launch an?</span>
+            <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer"><p data-i18n="faq_a4">Auf jeden Fall. Wir sind auch nach dem Launch für Sie da.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span data-i18n="faq_q5">Können Sie Websites in mehreren Sprachen erstellen?</span>
+            <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer"><p data-i18n="faq_a5">Ja, wir sind spezialisiert auf mehrsprachige Websites — Arabisch, Deutsch, Englisch und mehr.</p></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span data-i18n="faq_q6">Wie kann ich anfangen?</span>
+            <svg class="faq__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq__answer"><p data-i18n="faq_a6">Einfach auf „Kostenloses Angebot" klicken — wir melden uns innerhalb von 24 Stunden.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       FOOTER — dark with real contact info
+       ============================================= -->
+  <footer class="footer" id="contact">
+    <div class="container">
+
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <!-- AM Monogram — footer -->
+          <svg class="footer__mono" viewBox="0 0 90 112" xmlns="http://www.w3.org/2000/svg" aria-label="AM" role="img">
+            <defs>
+              <linearGradient id="mgf-gold" gradientUnits="userSpaceOnUse" x1="10" y1="6" x2="80" y2="106">
+                <stop offset="0%"   stop-color="#B8860B"/>
+                <stop offset="28%"  stop-color="#D4AF37"/>
+                <stop offset="52%"  stop-color="#FFE57A"/>
+                <stop offset="76%"  stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#B8860B"/>
+              </linearGradient>
+              <linearGradient id="mgf-shine" gradientUnits="userSpaceOnUse" x1="-80" y1="55" x2="-20" y2="55">
+                <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+                <stop offset="50%"  stop-color="white" stop-opacity="0.65"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+                <animate attributeName="x1" values="-80;110;110" keyTimes="0;0.35;1" dur="4s" begin="2s" repeatCount="indefinite"/>
+                <animate attributeName="x2" values="-20;170;170" keyTimes="0;0.35;1" dur="4s" begin="2s" repeatCount="indefinite"/>
+              </linearGradient>
+              <filter id="mgf-glow" x="-30%" y="-20%" width="160%" height="140%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+                <feFlood flood-color="#D4AF37" flood-opacity="0.6" result="color"/>
+                <feComposite in="color" in2="blur" operator="in" result="glow"/>
+                <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g filter="url(#mgf-glow)" fill="none" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="10,106 10,26 45,68 80,26 80,106" stroke="url(#mgf-gold)"/>
+              <polyline points="10,106 45,6 80,106"              stroke="url(#mgf-gold)"/>
+              <line x1="23" y1="68" x2="67" y2="68"             stroke="url(#mgf-gold)"/>
+              <polyline points="10,106 10,26 45,68 80,26 80,106" stroke="url(#mgf-shine)"/>
+              <polyline points="10,106 45,6 80,106"              stroke="url(#mgf-shine)"/>
+              <line x1="23" y1="68" x2="67" y2="68"             stroke="url(#mgf-shine)"/>
+            </g>
+          </svg>
+          <a href="#" class="logo footer__logo" aria-label="PIXELHELDEN">
+            <span class="logo__mark" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+                <polygon points="16,2 29,9.5 29,22.5 16,30 3,22.5 3,9.5" fill="#D4AF37"/>
+                <rect x="11" y="11" width="4" height="4" fill="#0A0A0A" opacity="0.60"/>
+                <rect x="17" y="11" width="4" height="4" fill="#0A0A0A" opacity="0.85"/>
+                <rect x="11" y="17" width="4" height="4" fill="#0A0A0A" opacity="0.85"/>
+                <rect x="17" y="17" width="4" height="4" fill="#0A0A0A" opacity="0.60"/>
+              </svg>
+            </span>
+            <span class="logo__pixel">PIXEL</span><span class="logo__helden">HELDEN</span>
+          </a>
+          <p class="footer__tagline" data-i18n="footer_tagline">
+            Zwei Entwickler. Eine Mission. Ihr perfekter Webauftritt.
+          </p>
+        </div>
+
+        <nav class="footer__contact" aria-label="Kontaktmöglichkeiten">
+
+          <a href="mailto:ahmad99dahab@gmail.com" class="footer__link">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span data-i18n="footer_email">ahmad99dahab@gmail.com</span>
+          </a>
+
+          <a href="https://wa.me/4917640548859" class="footer__link" target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span data-i18n="footer_phone">+49 176 40548859</span>
+          </a>
+
+          <a href="https://wa.me/4917640548859" class="footer__link footer__whatsapp" target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+            </svg>
+            <span data-i18n="footer_whatsapp">WhatsApp schreiben</span>
+          </a>
+
+        </nav>
+
+      </div>
+
+      <p class="footer__copy" data-i18n="footer_copy">© 2025 PIXELHELDEN. Alle Rechte vorbehalten.</p>
+      <div class="footer__legal">
+        <a href="impressum.html" class="footer__legal-link">Impressum</a>
+        <span class="footer__legal-sep" aria-hidden="true">·</span>
+        <a href="datenschutz.html" class="footer__legal-link">Datenschutz</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/4917640548859" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Back to top button -->
+  <button class="back-top" id="backTop" aria-label="Zurück nach oben" title="Zurück nach oben">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Social proof notification -->
+  <div class="social-proof" id="socialProof" aria-live="polite" aria-atomic="true">
+    <div class="social-proof__icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </div>
+    <p class="social-proof__msg" id="socialProofMsg"></p>
+  </div>
+
+  <!-- Custom cursor (desktop) -->
+  <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+
+  <!-- Cookie consent banner -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-modal="false" aria-label="Cookie-Einwilligung">
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text" data-i18n="cookie_text">Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzererfahrung zu bieten. Durch die weitere Nutzung stimmen Sie der Verwendung von Cookies zu.</p>
+      <div class="cookie-banner__actions">
+        <button id="cookieAccept" class="btn btn--primary cookie-btn" data-i18n="cookie_accept">Akzeptieren</button>
+        <button id="cookieDecline" class="btn btn--secondary cookie-btn" data-i18n="cookie_decline">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
