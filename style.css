@@ -3345,3 +3345,27 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .legal-card { padding: 30px 22px; }
   .legal-page { padding: 60px 0 100px; }
 }
+
+
+/* ============================================================
+   39. MOBILE HEADER — TWO-ROW STACKED LAYOUT (≤ 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Increase header height to fit two stacked rows */
+  :root {
+    --header-h: 88px;
+  }
+
+  /* Stack logo (row 1) and language switcher (row 2), both centered */
+  .header__inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Keep language buttons centered in their row */
+  .lang-switcher {
+    justify-content: center;
+  }
+}
