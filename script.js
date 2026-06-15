@@ -136,6 +136,7 @@ const translations = {
     r3_text:  "\"موقع احترافي في وقت قياسي وبسعر لا يُصدق. الفريق محترف جداً ومتجاوب.\"",
     r3_name:  "أحمد الرشيد",
     r3_role:  "صاحب مطعم، دبي",
+    r3_avatar: "AR",
 
     /* Calculator */
     calc_title:          "Preisrechner",
@@ -356,6 +357,7 @@ const translations = {
     r3_text:  "\"A professional website in record time at an unbelievable price. The team is very responsive.\"",
     r3_name:  "Ahmed Al-Rashid",
     r3_role:  "Restaurant Owner, Dubai",
+    r3_avatar: "AR",
 
     /* Calculator */
     calc_title:          "Price Calculator",
@@ -576,6 +578,7 @@ const translations = {
     r3_text:  "\"موقع احترافي في وقت قياسي وبسعر لا يُصدق. الفريق محترف جداً ومتجاوب.\"",
     r3_name:  "أحمد الرشيد",
     r3_role:  "صاحب مطعم، دبي",
+    r3_avatar: "أر",
 
     /* Calculator */
     calc_title:          "حاسبة الأسعار",
