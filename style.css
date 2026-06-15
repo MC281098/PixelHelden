@@ -2873,7 +2873,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 56px;
   width: auto;
   display: block;
-  align-self: flex-start;
+  align-self: center;
   transition: filter var(--t-base) var(--ease);
 }
 
