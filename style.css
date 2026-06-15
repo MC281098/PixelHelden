@@ -707,6 +707,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: var(--glass-shadow), 0 0 26px rgba(212, 175, 55, 0.09), 0 0 52px rgba(212, 175, 55, 0.04);
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 20px;
   /* 3D tilt — no CSS transform on hover, JS handles it */
   will-change: transform;
   transform-style: preserve-3d;
@@ -748,10 +752,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 28px;
   color: var(--gold);
   position: relative;
   z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
   transition:
     background var(--t-base) var(--ease),
     color var(--t-base) var(--ease),
@@ -771,9 +777,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 14px;
   position: relative;
   z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
 }
 
 .service-card__text {
@@ -782,6 +790,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   line-height: 1.78;
   position: relative;
   z-index: 1;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-top: 20px;
 }
 
 
