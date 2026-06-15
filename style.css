@@ -3399,7 +3399,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     padding-left: 6px;
     padding-right: 6px;
     white-space: normal;
-    word-break: break-all;
+    word-break: normal;
+    overflow-wrap: break-word;
     line-height: 1.3;
   }
 }
