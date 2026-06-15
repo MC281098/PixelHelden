@@ -1032,13 +1032,13 @@ function initLoader() {
     }, 500);
   }
 
-  function scheduleHide() { setTimeout(doHide, 2000); }
+  function scheduleHide() { setTimeout(doHide, 5000); }
 
   if (document.readyState === 'complete') {
     scheduleHide();
   } else {
     window.addEventListener('load', scheduleHide);
-    setTimeout(doHide, 6000); /* absolute failsafe: hide after 6s no matter what */
+    setTimeout(doHide, 9000); /* absolute failsafe: hide after 9s no matter what */
   }
 }
 

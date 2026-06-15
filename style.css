@@ -2060,6 +2060,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   gap: 14px;
+  direction: ltr;
   animation: loaderLogoIn 0.7s var(--ease-spring) both;
 }
 
