@@ -3273,6 +3273,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     overflow: visible;
   }
 
+  /* Reduce services section padding to close the gap with the stats section below */
+  .services { padding: 80px 0; }
+
   /* Services grid → horizontal scroll row */
   .services__grid {
     display: flex;
@@ -3298,6 +3301,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     max-width: 82%;
     min-width: 220px;
     scroll-snap-align: start;
+    padding: 28px 20px;
+  }
+
+  /* Prevent title from overflowing the icon+title row — allow text wrap */
+  .services__grid .service-card__title {
+    font-size: 1rem;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   /* Offers grid → horizontal scroll row */
