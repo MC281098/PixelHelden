@@ -322,6 +322,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  direction: ltr;
 }
 
 /* Glowing hexagon SVG mark */
@@ -1350,6 +1351,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ============================================================ */
 [dir="rtl"] .step__connector {
   transform: scaleX(-1);
+}
+
+[dir="rtl"] .hero__headline {
+  line-height: 1.5;
 }
 
 [dir="rtl"] .hero__sub {
