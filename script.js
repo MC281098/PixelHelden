@@ -1277,6 +1277,26 @@ function initBackToTop() {
 /* ============================================================
    10. INIT — restore saved language, activate tilt, CTAs & editor
    ============================================================ */
+function initScrollHints() {
+  var pairs = [
+    { grid: '.services__grid', hint: 'servicesScrollHint' },
+    { grid: '.offers__grid',   hint: 'offersScrollHint'   }
+  ];
+  pairs.forEach(function(p) {
+    var grid = document.querySelector(p.grid);
+    var hint = document.getElementById(p.hint);
+    if (!grid || !hint) return;
+    var done = false;
+    grid.addEventListener('scroll', function() {
+      if (!done && grid.scrollLeft > 10) {
+        done = true;
+        hint.classList.add('faded');
+        setTimeout(function() { hint.style.display = 'none'; }, 500);
+      }
+    }, { passive: true });
+  });
+}
+
 (function init() {
   /* Restore language preference */
   var saved = 'de';
@@ -1310,4 +1330,7 @@ function initBackToTop() {
   initFAQ();
   initCookieBanner();
   initBackToTop();
+
+  /* Mobile horizontal scroll hints */
+  initScrollHints();
 }());
