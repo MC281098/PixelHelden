@@ -3374,3 +3374,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     justify-content: center;
   }
 }
+
+
+/* ============================================================
+   40. RTL COMPARISON TABLE — MOBILE HEADER FIX (≤ 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Widen the two value columns so PIXELHELDEN and الوكالات الكبرى
+     each have their own space and cannot bleed into each other.
+     min-width: 0 removes the forced horizontal scroll that LTR needs
+     (Arabic feature text is concise enough to fit naturally). */
+  [dir="rtl"] .compare__header,
+  [dir="rtl"] .compare__row {
+    grid-template-columns: 1fr 90px 90px;
+    min-width: 0;
+  }
+
+  /* Allow header labels to wrap to a second line if still needed,
+     and tighten horizontal padding so text has maximum room. */
+  [dir="rtl"] .compare__header .compare__cell--us,
+  [dir="rtl"] .compare__header .compare__cell--them {
+    font-size: 0.72rem;
+    letter-spacing: 0;
+    padding-left: 6px;
+    padding-right: 6px;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 1.3;
+  }
+}
