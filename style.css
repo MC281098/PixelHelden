@@ -81,6 +81,63 @@
   --t-fast:         0.18s;
   --t-base:         0.30s;
   --t-slow:         0.60s;
+
+  /* Theme-sensitive surface vars (dark mode values = current defaults) */
+  --header-bg:            rgba(10, 10, 10, 0.80);
+  --header-bg-scrolled:   rgba(8, 8, 8, 0.92);
+  --footer-tagline-color: rgba(255, 255, 255, 0.35);
+  --footer-copy-color:    rgba(255, 255, 255, 0.18);
+  --footer-link-color:    rgba(255, 255, 255, 0.48);
+  --footer-legal-color:   rgba(255, 255, 255, 0.30);
+  --btn-secondary-text:   rgba(255, 255, 255, 0.85);
+  --calc-btn-text:        rgba(255, 255, 255, 0.65);
+}
+
+
+/* ============================================================
+   LIGHT THEME OVERRIDES  [data-theme="light"]
+   ============================================================ */
+[data-theme="light"] {
+  /* Core palette — warm cream */
+  --black:   #F5F0E8;
+  --black-2: #EDE7DC;
+  --black-3: #E5DDD0;
+  --black-4: #FAF7F2;
+
+  /* Gold — darker amber for readability on light bg */
+  --gold:       #9E7400;
+  --gold-light: #B58A00;
+  --gold-dark:  #7A5C00;
+  --gold-dim:   #6B5000;
+  --gold-08:    rgba(158, 116, 0, 0.08);
+  --gold-12:    rgba(158, 116, 0, 0.12);
+  --gold-15:    rgba(158, 116, 0, 0.15);
+  --gold-20:    rgba(158, 116, 0, 0.20);
+  --gold-30:    rgba(158, 116, 0, 0.30);
+  --gold-glow:  rgba(158, 116, 0, 0.18);
+  --gold-glow-lg: rgba(158, 116, 0, 0.08);
+
+  /* Text — dark warm brown */
+  --text:       #1C1409;
+  --text-muted: rgba(28, 20, 9, 0.55);
+
+  /* Glass — light translucent */
+  --glass-bg:       rgba(255, 255, 255, 0.60);
+  --glass-bg-hover: rgba(255, 255, 255, 0.78);
+  --glass-border:   rgba(158, 116, 0, 0.20);
+  --glass-border-h: rgba(158, 116, 0, 0.40);
+  --glass-shadow:   0 8px 32px rgba(0, 0, 0, 0.07), inset 0 1px 0 rgba(158, 116, 0, 0.12);
+  --glass-shadow-h: 0 20px 64px rgba(0, 0, 0, 0.12), 0 0 48px rgba(158, 116, 0, 0.07), inset 0 1px 0 rgba(158, 116, 0, 0.18);
+
+  /* Theme-sensitive surface vars */
+  --header-bg:            rgba(245, 240, 232, 0.88);
+  --header-bg-scrolled:   rgba(245, 240, 232, 0.97);
+  --footer-tagline-color: rgba(28, 20, 9, 0.55);
+  --footer-copy-color:    rgba(28, 20, 9, 0.38);
+  --footer-link-color:    rgba(28, 20, 9, 0.55);
+  --footer-legal-color:   rgba(28, 20, 9, 0.42);
+  --btn-secondary-text:   rgba(28, 20, 9, 0.85);
+  --calc-btn-text:        rgba(28, 20, 9, 0.65);
 }
 
 
@@ -213,7 +270,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Ghost outlined — secondary CTA (on dark bg) */
 .btn--secondary {
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--btn-secondary-text);
   border: 1.5px solid rgba(212, 175, 55, 0.40);
 }
 .btn--secondary:hover {
@@ -244,17 +301,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   top: 0;
   z-index: 200;
   height: var(--header-h);
-  background-color: rgba(10, 10, 10, 0.80);
+  background-color: var(--header-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+  border-bottom: 1px solid var(--gold-08);
   transition:
     box-shadow var(--t-base) var(--ease),
     background-color var(--t-base) var(--ease);
 }
 
 .header.scrolled {
-  background-color: rgba(8, 8, 8, 0.92);
+  background-color: var(--header-bg-scrolled);
   box-shadow:
     0 4px 24px rgba(0, 0, 0, 0.6),
     0 1px 0 rgba(212, 175, 55, 0.10);
@@ -434,6 +491,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   gap: 7px;
+  will-change: transform;
+  backface-visibility: hidden;
   background: rgba(212, 175, 55, 0.08);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -473,6 +532,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid rgba(212, 175, 55, 0.18);
+  will-change: transform;
+  backface-visibility: hidden;
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.8),
     0 24px 64px rgba(0, 0, 0, 0.70),
@@ -648,11 +709,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Animated cursor — gold */
 .browser__cursor {
   position: absolute;
+  top: 40%;
+  left: 15%;
   width: 12px;
   height: 12px;
   background: var(--gold);
   border-radius: 50%;
   box-shadow: 0 0 14px var(--gold), 0 0 28px rgba(212, 175, 55, 0.4);
+  will-change: transform;
+  backface-visibility: hidden;
   animation: cursorTrail 5s ease-in-out infinite;
   pointer-events: none;
 }
@@ -1220,7 +1285,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .footer__tagline {
   font-size: 0.93rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--footer-tagline-color);
   line-height: 1.65;
   max-width: 280px;
   text-align: center;
@@ -1237,7 +1302,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgba(255, 255, 255, 0.48);
+  color: var(--footer-link-color);
   font-size: 0.92rem;
   transition: color var(--t-fast) var(--ease);
 }
@@ -1268,7 +1333,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .footer__copy {
   text-align: center;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.18);
+  color: var(--footer-copy-color);
   letter-spacing: 0.02em;
 }
 
@@ -1332,12 +1397,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 @keyframes cursorTrail {
-  0%   { top: 58%; left: 18%; }
-  20%  { top: 36%; left: 60%; }
-  45%  { top: 68%; left: 72%; }
-  65%  { top: 25%; left: 38%; }
-  85%  { top: 72%; left: 22%; }
-  100% { top: 58%; left: 18%; }
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(110px, -30px); }
+  45%  { transform: translate(150px, 30px); }
+  65%  { transform: translate(55px, -55px); }
+  85%  { transform: translate(12px, 45px); }
+  100% { transform: translate(0, 0); }
 }
 
 @keyframes badgeFloat {
@@ -1812,6 +1877,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
+  will-change: transform;
+  backface-visibility: hidden;
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.6),
     0 28px 72px rgba(0, 0, 0, 0.65),
@@ -2026,7 +2093,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 100%;
   height: 100%;
   z-index: 99999;
-  background: #0A0A0A;
+  background: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2150,6 +2217,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   pointer-events: none;
   z-index: 10000;
   opacity: 0;
+  will-change: transform;
   transform: translate(-50%, -50%);
   transition:
     opacity 0.2s var(--ease),
@@ -2523,7 +2591,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: var(--radius-pill);
   border: 1.5px solid rgba(212, 175, 55, 0.22);
   background: transparent;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--calc-btn-text);
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
@@ -2629,11 +2697,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow:
-    0 4px 20px rgba(37, 211, 102, 0.45),
-    0 0 0 0 rgba(37, 211, 102, 0.40);
-  animation: waPulse 2.8s ease-out infinite;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
   transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
+}
+
+/* GPU-composited ripple via pseudo-element (replaces box-shadow animation) */
+.wa-float::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.40);
+  will-change: transform, opacity;
+  animation: waPulse 2.8s ease-out infinite;
+  pointer-events: none;
 }
 
 .wa-float:hover {
@@ -2647,9 +2724,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 @keyframes waPulse {
-  0%   { box-shadow: 0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.40); }
-  60%  { box-shadow: 0 4px 20px rgba(37,211,102,0.45), 0 0 0 16px rgba(37,211,102,0); }
-  100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0); }
+  0%   { transform: scale(1);   opacity: 0.65; }
+  80%  { transform: scale(2.0); opacity: 0; }
+  100% { transform: scale(2.0); opacity: 0; }
 }
 
 @media (max-width: 600px) {
@@ -3229,7 +3306,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .footer__legal-link {
-  color: rgba(255, 255, 255, 0.30);
+  color: var(--footer-legal-color);
   font-size: 0.82rem;
   transition: color var(--t-fast) var(--ease);
 }
@@ -3404,4 +3481,129 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     overflow-wrap: break-word;
     line-height: 1.3;
   }
+}
+
+
+/* ============================================================
+   41. THEME TOGGLE
+   ============================================================ */
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  transition:
+    color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--gold);
+  background-color: var(--gold-08);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.theme-icon { display: none; }
+.theme-icon--moon { display: block; }
+
+[data-theme="light"] .theme-icon--moon { display: none; }
+[data-theme="light"] .theme-icon--sun  { display: block; }
+
+/* Light mode — targeted overrides for elements with hardcoded dark backgrounds */
+[data-theme="light"] .social-proof {
+  background: rgba(232, 224, 210, 0.96);
+}
+[data-theme="light"] .cookie-banner {
+  background: rgba(240, 235, 225, 0.97);
+  box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .back-top {
+  background: rgba(245, 240, 232, 0.90);
+}
+[data-theme="light"] .header.scrolled {
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.09),
+    0 1px 0 rgba(158, 116, 0, 0.14);
+}
+
+/* Mobile — keep header__controls together in the second row */
+@media (max-width: 767px) {
+  .header__controls {
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   MOBILE ANIMATION REDUCTIONS (≤ 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Code editor float is imperceptible when scrolled past on mobile — remove it */
+  .code-editor { animation: none; }
+
+  /* Reduce badge float amplitude — less distracting on small screens */
+  @keyframes badgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-5px); }
+  }
+
+  /* Cursor trail in browser mockup — smaller range on narrow viewport */
+  @keyframes cursorTrail {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(60px, -20px); }
+    45%  { transform: translate(90px, 18px); }
+    65%  { transform: translate(30px, -30px); }
+    85%  { transform: translate(8px, 25px); }
+    100% { transform: translate(0, 0); }
+  }
+}
+
+/* ============================================================
+   LIGHT MODE — additional element fixes
+   ============================================================ */
+
+/* Offer card package name was hard-coded white — invisible on cream glass */
+[data-theme="light"] .offer-card__name {
+  color: var(--text);
+}
+/* Popular card keeps gradient text (webkit-text-fill-color: transparent still applies) */
+
+/* Elements using color: var(--black) as dark-text-on-gold — must stay dark in light mode */
+[data-theme="light"] .btn--primary,
+[data-theme="light"] .btn--accent {
+  color: #1C1409;
+}
+[data-theme="light"] .lang-btn.active {
+  color: #1C1409;
+}
+[data-theme="light"] .step__icon {
+  color: #1C1409;
+}
+[data-theme="light"] .founder-card__hex {
+  color: #1C1409;
+}
+[data-theme="light"] .offer-card__popular-badge {
+  color: #1C1409;
+}
+[data-theme="light"] .review-card__avatar {
+  color: #1C1409;
+}
+[data-theme="light"] .service-card:hover .service-card__icon {
+  color: #1C1409;
 }

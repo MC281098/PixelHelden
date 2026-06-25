@@ -2,6 +2,7 @@
 <html lang="de" dir="ltr">
 <head>
   <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('ph-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 112'><rect width='90' height='112' fill='%230A0A0A' rx='10'/><g fill='none' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'><polyline points='10,106 10,26 45,68 80,26 80,106' stroke='%23D4AF37'/><polyline points='10,106 45,6 80,106' stroke='%23D4AF37'/><line x1='23' y1='68' x2='67' y2='68' stroke='%23D4AF37'/></g></svg>" />
@@ -67,13 +68,19 @@
         <span class="logo__pixel">PIXEL</span><span class="logo__helden">HELDEN</span>
       </a>
 
-      <nav class="lang-switcher" aria-label="Language switcher">
-        <button class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
-        <span class="lang-divider" aria-hidden="true">|</span>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        <span class="lang-divider" aria-hidden="true">|</span>
-        <button class="lang-btn" data-lang="ar" aria-pressed="false">&#1593;&#1585;&#1576;&#1610;</button>
-      </nav>
+      <div class="header__controls">
+        <nav class="lang-switcher" aria-label="Language switcher">
+          <button class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="ar" aria-pressed="false">&#1593;&#1585;&#1576;&#1610;</button>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Heller Modus aktivieren" aria-pressed="false">
+          <svg class="theme-icon theme-icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon theme-icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
 
     </div>
   </header>

@@ -236,6 +236,10 @@ const translations = {
     daten_s8_outro: "Wir bearbeiten Ihre Anfrage innerhalb eines Monats.",
     daten_s9_h:     "9. Aktualität dieser Erklärung",
     daten_s9_text:  "Diese Datenschutzerklärung hat den Stand Juni 2025. Wir behalten uns vor, diese Erklärung bei Änderungen unseres Angebots oder der Rechtslage anzupassen.",
+
+    /* Theme toggle */
+    theme_dark_label:  "Heller Modus aktivieren",
+    theme_light_label: "Dunkler Modus aktivieren",
   },
 
   /* ——— ENGLISH ——— */
@@ -457,6 +461,10 @@ const translations = {
     daten_s8_outro: "We will respond to your request within one month.",
     daten_s9_h:     "9. Currency of This Policy",
     daten_s9_text:  "This privacy policy is current as of June 2025. We reserve the right to update this policy when our services or applicable laws change.",
+
+    /* Theme toggle */
+    theme_dark_label:  "Switch to light mode",
+    theme_light_label: "Switch to dark mode",
   },
 
   /* ——— ARABIC ——— */
@@ -678,6 +686,10 @@ const translations = {
     daten_s8_outro: "سنرد على طلبك خلال شهر واحد.",
     daten_s9_h:     "9. تحديث هذه السياسة",
     daten_s9_text:  "هذه السياسة محدّثة حتى يونيو 2025. نحتفظ بحق تعديلها عند تغيير خدماتنا أو التشريعات المعمول بها.",
+
+    /* Theme toggle */
+    theme_dark_label:  "تفعيل الوضع الفاتح",
+    theme_light_label: "تفعيل الوضع الداكن",
   },
 };
 
@@ -722,6 +734,14 @@ function setLang(lang) {
   try {
     localStorage.setItem('ph-lang', lang);
   } catch (_) { /* storage unavailable — silent fail */ }
+
+  /* Update theme toggle aria-label for the new language */
+  var toggle = document.getElementById('themeToggle');
+  if (toggle) {
+    var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    var labelKey = currentTheme === 'light' ? 'theme_light_label' : 'theme_dark_label';
+    if (t[labelKey]) toggle.setAttribute('aria-label', t[labelKey]);
+  }
 }
 
 
@@ -801,33 +821,39 @@ function initTilt() {
   var FLOAT_Z     = 18;   /* px   — how far card "lifts" toward viewer */
 
   document.querySelectorAll('.tilt-card').forEach(function (card) {
+    var rect     = null;   /* cached on mouseenter — avoids getBCR on every move */
+    var pendingX = 0;
+    var pendingY = 0;
+    var raf      = null;
 
     card.addEventListener('mouseenter', function () {
-      /* Remove return-spring class so transform is instant during tracking */
+      rect = card.getBoundingClientRect();  /* measure once per hover */
       card.classList.remove('tilt-reset');
     });
 
     card.addEventListener('mousemove', function (e) {
-      var rect    = card.getBoundingClientRect();
-      /* Normalised position: -1 (left/top) to +1 (right/bottom) */
-      var pctX    = (e.clientX - (rect.left + rect.width  / 2)) / (rect.width  / 2);
-      var pctY    = (e.clientY - (rect.top  + rect.height / 2)) / (rect.height / 2);
-      /* Clamp to [-1, 1] in case cursor is at the very edge */
-      pctX = Math.max(-1, Math.min(1, pctX));
-      pctY = Math.max(-1, Math.min(1, pctY));
-
-      var rotY =  pctX * MAX_TILT;   /* tilt left↔right */
-      var rotX = -pctY * MAX_TILT;   /* tilt up↕down */
-
-      card.style.transform =
-        'perspective(' + PERSPECTIVE + 'px) ' +
-        'rotateX(' + rotX + 'deg) ' +
-        'rotateY(' + rotY + 'deg) ' +
-        'translateZ(' + FLOAT_Z + 'px)';
+      pendingX = e.clientX;
+      pendingY = e.clientY;
+      if (raf || !rect) return;             /* skip if rAF already queued */
+      raf = requestAnimationFrame(function () {
+        raf = null;
+        var pctX = (pendingX - (rect.left + rect.width  / 2)) / (rect.width  / 2);
+        var pctY = (pendingY - (rect.top  + rect.height / 2)) / (rect.height / 2);
+        pctX = Math.max(-1, Math.min(1, pctX));
+        pctY = Math.max(-1, Math.min(1, pctY));
+        var rotY =  pctX * MAX_TILT;
+        var rotX = -pctY * MAX_TILT;
+        card.style.transform =
+          'perspective(' + PERSPECTIVE + 'px) ' +
+          'rotateX(' + rotX + 'deg) ' +
+          'rotateY(' + rotY + 'deg) ' +
+          'translateZ(' + FLOAT_Z + 'px)';
+      });
     });
 
     card.addEventListener('mouseleave', function () {
-      /* Spring back to flat */
+      rect = null;
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
       card.classList.add('tilt-reset');
       card.style.transform =
         'perspective(' + PERSPECTIVE + 'px) ' +
@@ -1069,9 +1095,17 @@ function initCursor() {
   var cursor = document.getElementById('customCursor');
   if (!cursor) return;
 
+  var cx = 0, cy = 0, cursorRaf = null;
+
   document.addEventListener('mousemove', function (e) {
-    cursor.style.transform = 'translate(' + (e.clientX - 11) + 'px, ' + (e.clientY - 11) + 'px)';
+    cx = e.clientX;
+    cy = e.clientY;
     cursor.classList.add('visible');
+    if (cursorRaf) return;
+    cursorRaf = requestAnimationFrame(function () {
+      cursorRaf = null;
+      cursor.style.transform = 'translate(' + (cx - 11) + 'px, ' + (cy - 11) + 'px)';
+    });
   }, { passive: true });
 
   document.addEventListener('mouseleave', function () { cursor.classList.remove('visible'); });
@@ -1300,6 +1334,37 @@ function initScrollHints() {
   });
 }
 
+/* ============================================================
+   12. THEME TOGGLE — light / dark mode
+   ============================================================ */
+function initThemeToggle() {
+  /* Apply saved theme (or default dark) */
+  var saved = 'dark';
+  try { saved = localStorage.getItem('ph-theme') || 'dark'; } catch (_) {}
+  document.documentElement.setAttribute('data-theme', saved);
+
+  var btn = document.getElementById('themeToggle');
+  if (!btn) return;
+
+  function applyLabel(theme) {
+    var t = translations[currentLang] || translations.de;
+    var key = theme === 'light' ? 'theme_light_label' : 'theme_dark_label';
+    btn.setAttribute('aria-label', t[key] || '');
+    btn.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+  }
+
+  applyLabel(saved);
+
+  btn.addEventListener('click', function () {
+    var current = document.documentElement.getAttribute('data-theme') || 'dark';
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('ph-theme', next); } catch (_) {}
+    applyLabel(next);
+  });
+}
+
+
 (function init() {
   /* Restore language preference */
   var saved = 'de';
@@ -1336,4 +1401,7 @@ function initScrollHints() {
 
   /* Mobile horizontal scroll hints */
   initScrollHints();
+
+  /* Light / dark theme toggle */
+  initThemeToggle();
 }());
